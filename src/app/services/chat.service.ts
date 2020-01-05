@@ -6,13 +6,16 @@ import {WebsocketService} from './websocket.service';
 })
 export class ChatService {
 
-  constructor(public wsService: WebsocketService) { }
-
-  sendMessage(message){
-    const payload = {
-      from: 'Ronal',
-      body: message
-    };
-    this.wsService.emit('message', payload);
+  constructor(public wsService: WebsocketService) { 
   }
+
+  sendMessage(payload){  
+    this.wsService.emit('message',payload);
+  }
+
+  getMessages(){
+    return this.wsService.listen('messages-news');
+  }
+
+
 }

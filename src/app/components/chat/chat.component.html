@@ -1,0 +1,13 @@
+<div class="card" style="margin-top: 20px;width:450px;max-width: 450px;">
+    <div class="card-body">
+        <h5 class="card-title">Mensajes</h5>
+        <ul class="list-group list-group-flush" #chat style="overflow-y: scroll;height: 300px;">
+        <li *ngFor="let i of messages" class="list-group-item">{{i}}</li>
+          </ul>
+        <form class="form" (ngSubmit)="send()">
+            <div class="form-group" >
+                <input [(ngModel)]="message" name="message" type="text" class="form-control">
+            </div>
+        </form>
+    </div>
+</div>

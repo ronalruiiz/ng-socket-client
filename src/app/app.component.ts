@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ChatService} from './services/chat.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +8,11 @@ import {ChatService} from './services/chat.service';
 export class AppComponent implements OnInit{
   title = 'frontentsocketng';
 
-  constructor(public chatService: ChatService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.chatService.sendMessage('hola como estas');
+    
   }
 
 }
